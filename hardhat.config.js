@@ -1,4 +1,5 @@
 require("@nomiclabs/hardhat-waffle");
+require('dotenv').config()
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
@@ -30,8 +31,8 @@ module.exports = {
   },
   networks: {
     ropsten: {
-      url: `https://ropsten.infura.io/v3/`,
-      accounts: [`key`],
+      url: process.env.infura,
+      accounts: [process.env.pk],
     }
   }
 };
